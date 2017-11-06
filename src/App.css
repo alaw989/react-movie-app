@@ -1,0 +1,123 @@
+body {
+  background-color: black;
+}
+
+h1,h2,h3,h4,h5 {
+  color: #fff;
+}
+
+
+
+p {
+  color: #fff;
+  line-height: 25px;
+}
+
+.AppWrapper {
+  position: relative;
+}
+
+.AppWrapper:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(219, 219, 219, 0) 43%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(219, 219, 219, 0) 57%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  transition: all 0.3s linear;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+}
+
+.rbt {
+  display: flex;
+  flex-direction: column;
+}
+
+.rbt-input {
+  display: flex;
+  border-bottom: 1px solid #FFF;
+  width: 100%;
+  min-width: 510px;
+}
+
+.sr-only {
+  display: none;
+}
+
+ul {
+  list-style-type: none;
+  border: 1px solid black;
+  min-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  position: absolute;
+  z-index: 100;
+  right: 0;
+  top: 40px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+ul li {
+  padding: 10px 0;
+}
+
+ul li a {
+  color: #fff;
+  padding: 0px 10px;
+}
+
+input[type="text"] {
+    color: #FFF;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.InputContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.InputContainer-logo {
+  max-width: 150px;
+  height: 30%;
+}
+
+.ColumnContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.ContentContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  padding: 0 20px;
+}
