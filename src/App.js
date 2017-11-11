@@ -5,9 +5,10 @@ import MovieTitle from "./MovieTitle.js";
 import MovieDesc from "./MovieDesc.js";
 import MovieBg from "./MovieBg.js";
 import MovieRelease from "./MovieRelease.js";
-import moviedblogo from "./powered-by-rectangle-green.svg"
-import "./App.css";
+import MovieVote from "./MovieVote.js";
+import moviedblogo from "./powered-by-rectangle-green.svg";
 
+import "./App.css";
 
 const AsyncTypeahead = asyncContainer(Typeahead);
 const urlForMovie = movie =>
@@ -33,20 +34,47 @@ class App extends Component {
       ]
     };
     this.handleAction = this.handleAction.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleAction = event => {
-    event.persist();
-    if (event.key === "Enter") {
-      fetch(urlForMovie(event.target.value))
+
+
+  handleClick = event => {
+    let value = event.toString("");
+    if (event.length > 0) {
+      fetch(urlForMovie(value))
         .then(data => data.json())
         .then(data => {
           let movie = data.results;
           const titles = [];
-          movie.map(
-            x => (x.title === event.target.value ? titles.push(x) : "")
-          );
-          console.log(titles);
+          movie.map(x => (x.title === value ? titles.push(x) : ""));
+          if (titles.length < 1) {
+            return null;
+          }
+          this.setState({
+            movieData: titles
+          });
+        });
+    }
+  };
+
+  handleAction = event => {
+    event.persist();
+    const query = event.target.value;
+    if (query === "") {
+      return null;
+    }
+    if (event.key === "Enter") {
+      fetch(urlForMovie(query))
+        .then(data => data.json())
+        .then(data => {
+          let movie = data.results;
+          console.log(movie);
+          const titles = [];
+          movie.map(x => (x.title === query ? titles.push(x) : ""));
+          if (titles.length < 1) {
+            return null;
+          }
           this.setState({
             movieData: titles
           });
@@ -60,7 +88,7 @@ class App extends Component {
         <MovieBg movie={this.state.movieData} />
         <div className="App">
           <div className="InputContainer">
-          <img src={moviedblogo} class="InputContainer-logo"/>
+            <img src={moviedblogo} className="InputContainer-logo" />
             <AsyncTypeahead
               onSearch={movie =>
                 fetch(urlForMovie(movie))
@@ -75,6 +103,8 @@ class App extends Component {
                   })}
               options={this.state.options}
               onKeyDown={this.handleAction}
+              onChange={this.handleClick}
+              onActiveItemChange={this.active}
               placeholder="Search Movie Title..."
               maxResults={5}
               emptyLabel="No Matches Found"
@@ -90,6 +120,7 @@ class App extends Component {
               <MovieTitle movie={this.state.movieData} />
               <MovieDesc movie={this.state.movieData} />
               <MovieRelease movie={this.state.movieData} />
+              <MovieVote movie={this.state.movieData} />
             </div>
           </div>
         </div>

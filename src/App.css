@@ -121,3 +121,26 @@ input[type="text"] {
   width: 100%;
   padding: 0 20px;
 }
+
+.rbt-highlight-text {
+  background-color: transparent;
+  color: white;
+}
+
+.dropdown-menu li:hover {
+  background-color: rgba(0, 252, 135, 1);
+}
+
+.dropdown-menu li {
+  padding: 0 0 0 10px;
+}
+
+.dropdown-menu a  {
+  display: flex;
+  padding: 10px 0 10px;
+  text-decoration: none;
+}
+
+.active {
+  background-color: rgba(0, 252, 135, 1);
+}
