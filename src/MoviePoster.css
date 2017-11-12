@@ -7,9 +7,10 @@
 
 @media (max-width: 769px) {
     .MoviePoster {
-        max-width: 75%;
         margin: 0 auto;
-        order: 2;
+        -webkit-box-ordinal-group: 3;
+            -ms-flex-order: 2;
+                order: 2;
 
     }
 }

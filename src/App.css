@@ -179,7 +179,6 @@ input[type="text"] {
     -webkit-box-ordinal-group: 2;
     -ms-flex-order: 1;
     order: 1;
-    max-width: 69.5%;
     margin: 0 auto;
   }
   .LogoContainer {
@@ -220,7 +219,6 @@ input[type="text"] {
   -ms-flex-direction: column;
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.9);
-  width: 100%;
   padding: 0 20px;
 }
 
