@@ -1,12 +1,15 @@
-
+.MoviePoster {
+ 
+}
 
 .MoviePoster img {
-    max-width: 700px;
-    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 @media (max-width: 769px) {
     .MoviePoster {
+       
         margin: 0 auto;
         -webkit-box-ordinal-group: 3;
             -ms-flex-order: 2;
