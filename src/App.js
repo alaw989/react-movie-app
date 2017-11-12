@@ -37,8 +37,6 @@ class App extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-
-
   handleClick = event => {
     let value = event.toString("");
     if (event.length > 0) {
@@ -88,31 +86,35 @@ class App extends Component {
         <MovieBg movie={this.state.movieData} />
         <div className="App">
           <div className="InputContainer">
-            <img src={moviedblogo} className="InputContainer-logo" />
-            <AsyncTypeahead
-              onSearch={movie =>
-                fetch(urlForMovie(movie))
-                  .then(data => data.json())
-                  .then(data => {
-                    let movie = data.results;
-                    const titles = [];
-                    movie.map(x => titles.push(x.title));
-                    this.setState({
-                      options: titles
-                    });
-                  })}
-              options={this.state.options}
-              onKeyDown={this.handleAction}
-              onChange={this.handleClick}
-              onActiveItemChange={this.active}
-              placeholder="Search Movie Title..."
-              maxResults={5}
-              emptyLabel="No Matches Found"
-              searchText=""
-              propText=""
-              paginationText=""
-              delay={300}
-            />
+            <div className="LogoContainer">
+              <img src={moviedblogo} className="InputContainer-logo" />
+            </div>
+            <div className="TypeaheadContainer">
+              <AsyncTypeahead
+                onSearch={movie =>
+                  fetch(urlForMovie(movie))
+                    .then(data => data.json())
+                    .then(data => {
+                      let movie = data.results;
+                      const titles = [];
+                      movie.map(x => titles.push(x.title));
+                      this.setState({
+                        options: titles
+                      });
+                    })}
+                options={this.state.options}
+                onKeyDown={this.handleAction}
+                onChange={this.handleClick}
+                onActiveItemChange={this.active}
+                placeholder="Search Movie Title..."
+                maxResults={5}
+                emptyLabel="No Matches Found"
+                searchText=""
+                propText=""
+                paginationText=""
+                delay={300}
+              />
+            </div>
           </div>
           <div className="ColumnContainer">
             <MoviePoster movie={this.state.movieData} />

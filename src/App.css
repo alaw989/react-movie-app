@@ -1,16 +1,27 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,700");
+@import url("https://fonts.googleapis.com/css?family=Oswald:300");
 body {
   background-color: black;
 }
 
-h1,h2,h3,h4,h5 {
+h1,
+h3,
+h4,
+h5 {
   color: #fff;
 }
 
-
+h2 {
+  font-family: "Oswald", sans-serif;
+  color: #fff;
+  font-size: 15px;
+  margin: 0;
+}
 
 p {
   color: #fff;
   line-height: 25px;
+  font-family: Lato, sans-serif;
 }
 
 .AppWrapper {
@@ -25,20 +36,20 @@ p {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(219, 219, 219, 0) 43%,
-    rgba(255, 255, 255, 0) 50%,
-    rgba(219, 219, 219, 0) 57%,
-    rgba(0, 0, 0, 1) 100%
-  );
-  transition: all 0.3s linear;
+  background: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, 1)), color-stop(43%, rgba(219, 219, 219, 0)), color-stop(50%, rgba(255, 255, 255, 0)), color-stop(57%, rgba(219, 219, 219, 0)), to(rgba(0, 0, 0, 1)));
+  background: linear-gradient( to bottom, rgba(0, 0, 0, 1) 0%, rgba(219, 219, 219, 0) 43%, rgba(255, 255, 255, 0) 50%, rgba(219, 219, 219, 0) 57%, rgba(0, 0, 0, 1) 100%);
 }
 
 .App {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   max-width: 900px;
   width: 100%;
@@ -50,15 +61,18 @@ p {
 }
 
 .rbt {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .rbt-input {
-  display: flex;
-  border-bottom: 1px solid #FFF;
+  border-bottom: 1px solid #fff;
   width: 100%;
-  min-width: 510px;
 }
 
 .sr-only {
@@ -68,7 +82,6 @@ p {
 ul {
   list-style-type: none;
   border: 1px solid black;
-  min-width: 500px;
   width: 100%;
   margin: 0 auto;
   padding: 0;
@@ -89,17 +102,48 @@ ul li a {
 }
 
 input[type="text"] {
-    color: #FFF;
-    font-size: 15px;
-    padding: 10px;
+  color: #fff;
+  font-size: 15px;
+  padding: 10px;
+  color: #fff !important;
+  font-family: Lato, sans-serif;
 }
 
 .InputContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding-bottom: 20px;
+}
+
+.LogoContainer {
+  width: 100%;
+}
+
+.TypeAheadContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (max-width: 546px) {
+  .InputContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
 }
 
 .InputContainer-logo {
@@ -108,23 +152,113 @@ input[type="text"] {
 }
 
 .ColumnContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   width: 100%;
 }
 
+@media (max-width: 768px) {
+  .InputContainer {
+    max-width: 75%;
+  }
+  .ColumnContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .ContentContainer {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+    max-width: 69.5%;
+    margin: 0 auto;
+  }
+  .LogoContainer {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+}
+
+::-webkit-input-placeholder { 
+  color: rgb(236, 233, 233);
+}
+::-moz-placeholder { 
+  color: rgb(236, 233, 233);
+}
+:-ms-input-placeholder { 
+  color: rgb(236, 233, 233);
+}
+:-moz-placeholder { 
+  color: rgb(236, 233, 233);
+} 
+
+.TypeaheadContainer {
+  width: 100%;
+  padding: 10px 0;
+}
+
 .ContentContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.9);
   width: 100%;
   padding: 0 20px;
 }
 
+.MovieTitle-text {
+  margin-bottom: 0;
+  font-family: Lato, sans-serif;
+  font-weight: 700;
+}
+
+.Movie-date {
+  color: rgba(0, 252, 135, 1);
+  font-family: "Oswald", sans-serif;
+  font-size: 28px;
+  margin: 4px 0;
+}
+
+.Vote-Average {
+  color: rgba(0, 252, 135, 1);
+  font-family: "Oswald", sans-serif;
+  font-size: 28px;
+  margin: 4px 0;
+}
+
+.VoteAverage {
+  margin: 20px 0;
+}
+
 .rbt-highlight-text {
   background-color: transparent;
   color: white;
+}
+
+.rbt-input-main {
+  padding: 10px !important;
+}
+
+.rbt-open-clearfix {
+  width: 100%;
 }
 
 .dropdown-menu li:hover {
@@ -135,7 +269,9 @@ input[type="text"] {
   padding: 0 0 0 10px;
 }
 
-.dropdown-menu a  {
+.dropdown-menu a {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 10px 0 10px;
   text-decoration: none;

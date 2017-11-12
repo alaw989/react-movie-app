@@ -8,7 +8,7 @@ const MovieVote = (props) => {
     return (
         <div className="VoteAverage">
           <h2>Vote Average</h2>
-          <p className="Vote-Average">{vote}</p>
+          <p className="Vote-Average">{vote} / 10</p>
         </div>
         )
 
