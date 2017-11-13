@@ -1,19 +1,21 @@
 .MoviePoster {
- 
+    max-width: 400px;
 }
 
 .MoviePoster img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
 }
 
 @media (max-width: 769px) {
     .MoviePoster {
-       
+       max-width:540px;
         margin: 0 auto;
         -webkit-box-ordinal-group: 3;
             -ms-flex-order: 2;
                 order: 2;
 
+    }
+    .MoviePoster img {
+        
     }
 }

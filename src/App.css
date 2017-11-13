@@ -52,6 +52,7 @@ p {
   -ms-flex-align: center;
   align-items: center;
   max-width: 90%;
+  max-width:900px;
   width: 100%;
   margin: 0 auto;
   position: absolute;
@@ -221,6 +222,7 @@ input[type="text"] {
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.9);
   padding: 0 20px;
+  max-width:500px;
 }
 
 .MovieTitle-text {
