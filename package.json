@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "ramda": "^0.25.0",
     "react": "^16.0.0",
     "react-bootstrap-typeahead": "^2.0.0-rc.4",
     "react-dom": "^16.0.0",
-    "react-scripts": "1.0.17"
+    "react-scripts": "1.0.17",
+    "styled-components": "^2.2.3"
   },
   "scripts": {
     "start": "react-scripts start",

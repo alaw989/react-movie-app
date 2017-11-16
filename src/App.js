@@ -17,8 +17,8 @@ const urlForMovie = movie =>
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { options: [] };
     this.state = {
+      options: [],
       movieData: [
         {
           backdrop_path: "/gMCKSic0my5n5ovqJU7fjMC0tD.jpg",
