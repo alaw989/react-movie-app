@@ -22,13 +22,13 @@ class App extends Component {
       movieData: [
         {
           backdrop_path: "/gMCKSic0my5n5ovqJU7fjMC0tD.jpg",
-          original_title: "Next Friday",
+          original_title: "Gladiator",
           overview:
-            "Ice Cube returns as Craig Jones, a streetwise man from South Central Los Angeles who has a knack for getting into trouble. This time out, Craig is still trying to outsmart neighborhood bully Debo (Tommy 'Tiny' Lister Jr.); after Craig gets the better of Debo in a fist fight, Debo is determined to flatten Craig in a rematch. Looking to stay out of Debo's way, Craig's dad decides that it would be a good idea for Craig to hide out with his Uncle Elroy and cousin Day-Day in Rancho Cucamonga... but trouble seems to find him there also.",
-          popularity: 8.689173,
+            "In the year 180, the death of emperor Marcus Aurelius throws the Roman Empire into chaos. Maximus is one of the Roman army's most capable and trusted generals and a key advisor to the emperor. As Marcus' devious son Commodus ascends to the throne, Maximus is set to be executed. He escapes, but is captured by slave traders. Renamed Spaniard and forced to become a gladiator, Maximus must battle to the death with other men for the amusement of paying audiences.",
+          popularity: 8.2,
           poster_path: "/zUzn6YBbnEhdIkqtf9w0xG58NMC.jpg",
-          release_date: "2000-01-12",
-          title: "Next Friday",
+          release_date: "2000-05-01",
+          title: "Gladiator",
           vote_average: 6.5
         }
       ]
@@ -67,7 +67,7 @@ class App extends Component {
         .then(data => data.json())
         .then(data => {
           let movie = data.results;
-          console.log(movie);
+     
           const titles = [];
           movie.map(x => (x.title === query ? titles.push(x) : ""));
           if (titles.length < 1) {
@@ -87,7 +87,7 @@ class App extends Component {
         <div className="App">
           <div className="InputContainer">
             <div className="LogoContainer">
-              <img src={moviedblogo} className="InputContainer-logo" />
+              <img alt="movie-logo" src={moviedblogo} className="InputContainer-logo" />
             </div>
             <div className="TypeaheadContainer">
               <AsyncTypeahead

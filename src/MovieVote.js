@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const MovieVote = (props) => {
 
     let vote; 
-    props.movie.vote_average == 6.5 ? (vote = "6.5") : (vote = props.movie[0].vote_average);
+    props.movie.vote_average === 6.5 ? (vote = "6.5") : (vote = props.movie[0].vote_average);
 
     return (
         <div className="VoteAverage">
