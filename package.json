@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "color": "^4.0.1",
+    "color-string": "^1.6.0",
     "react": "^16.14.0",
     "react-bootstrap-typeahead": "^2.6.0",
     "react-dom": "^16.14.0",
