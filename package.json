@@ -16,9 +16,9 @@
     "nth-check": "^2.0.1",
     "react": "^16.14.0",
     "react-bootstrap-typeahead": "^2.6.0",
-    "react-dev-utils": "^11.0.4",
+    "react-dev-utils": "^12.0.1",
     "react-dom": "^16.14.0",
-    "react-scripts": "^3.4.4",
+    "react-scripts": "^5.0.1",
     "sockjs": "^0.3.21",
     "trim-newlines": "^4.0.2",
     "webpack-dev-server": "^4.5.0"
