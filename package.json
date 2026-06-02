@@ -31,6 +31,9 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
+  "overrides": {
+    "underscore": ">=1.13.8"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
